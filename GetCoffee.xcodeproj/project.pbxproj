@@ -12,6 +12,7 @@
 		3D7CB45F2929EE9E009CA911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB45E2929EE9E009CA911 /* Assets.xcassets */; };
 		3D7CB4622929EE9E009CA911 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB4612929EE9E009CA911 /* Preview Assets.xcassets */; };
 		3D7CB46B2929F358009CA911 /* CofeeShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CB46A2929F358009CA911 /* CofeeShopModel.swift */; };
+		3DD5BCF5292A318600E87CE9 /* CoffeeShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		3D7CB45E2929EE9E009CA911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D7CB4612929EE9E009CA911 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D7CB46A2929F358009CA911 /* CofeeShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofeeShopModel.swift; sourceTree = "<group>"; };
+		3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				3D7CB45C2929EE9C009CA911 /* HomeView.swift */,
+				3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D7CB45D2929EE9C009CA911 /* HomeView.swift in Sources */,
+				3DD5BCF5292A318600E87CE9 /* CoffeeShopDetailView.swift in Sources */,
 				3D7CB46B2929F358009CA911 /* CofeeShopModel.swift in Sources */,
 				3D7CB45B2929EE9C009CA911 /* GetCoffeeApp.swift in Sources */,
 			);
