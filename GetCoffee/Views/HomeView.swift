@@ -77,9 +77,13 @@ struct HomeView: View {
                 placement: .navigationBarDrawer(displayMode: .always),
                 prompt: "Search Coffee Shop"
             ) {
-                ForEach(suggestedSearchResult) { result in
-                    Text("Looking for \(result.name)")
-                        .searchCompletion(result.name)
+                if (suggestedSearchResult.isEmpty) {
+                    Text("Oops.. No coffee shops found in the list")
+                } else {
+                    ForEach(suggestedSearchResult) { result in
+                        Text("Looking for \(result.name)")
+                            .searchCompletion(result.name)
+                    }
                 }
             }
         }
