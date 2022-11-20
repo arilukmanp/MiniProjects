@@ -12,13 +12,29 @@ struct HomeView: View {
     @State private var searchInput: String = ""
     
     private var cofeeShopResult: [CoffeeShop] {
-        return CoffeeShopProvider.all().shuffled()
+        let result = CoffeeShopProvider.all()
+        
+        if searchInput.isEmpty {
+            return result
+        } else {
+            return result.filter { item in
+                item.name.lowercased().contains(searchInput.lowercased())
+            }
+        }
+    }
+    
+    private var suggestedSearchResult: [CoffeeShop] {
+        if searchInput.isEmpty {
+            return []
+        } else {
+            return cofeeShopResult
+        }
     }
     
     
     var body: some View {
         NavigationStack {
-            List(cofeeShopResult) { coffeeShop in
+            List(cofeeShopResult.shuffled()) { coffeeShop in
                 NavigationLink(destination: CoffeeShopDetailView(coffeeShop: coffeeShop)) {
                     HStack (spacing: 16) {
                         Image(coffeeShop.image)
@@ -60,7 +76,12 @@ struct HomeView: View {
                 text: $searchInput,
                 placement: .navigationBarDrawer(displayMode: .always),
                 prompt: "Search Coffee Shop"
-            )
+            ) {
+                ForEach(suggestedSearchResult) { result in
+                    Text("Looking for \(result.name)")
+                        .searchCompletion(result.name)
+                }
+            }
         }
     }
 }
