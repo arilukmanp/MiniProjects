@@ -20,8 +20,8 @@ struct CoffeeShopDetailView: View {
                     ZStack (alignment: .bottomTrailing) {
                         Image(coffeeShop.image)
                             .resizable()
-                            .scaledToFill()
-                            .frame(width: .infinity, height: 300)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: UIScreen.main.bounds.width, height: 300)
                             .clipped()
                         
                         RatingView(rating: "4.5")
@@ -42,6 +42,7 @@ struct CoffeeShopDetailView: View {
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

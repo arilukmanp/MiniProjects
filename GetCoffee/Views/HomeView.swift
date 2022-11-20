@@ -12,44 +12,46 @@ struct HomeView: View {
     @State private var searchInput: String = ""
     
     private var cofeeShopResult: [CoffeeShop] {
-        return CoffeeShopProvider.all()
+        return CoffeeShopProvider.all().shuffled()
     }
     
     
     var body: some View {
         NavigationStack {
-            List(cofeeShopResult) { coffeeshop in
-                HStack (spacing: 16) {
-                    Image(coffeeshop.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 120)
-                        .cornerRadius(16)
-                    
-                    VStack (alignment: .leading, spacing: 0) {
-                        Text(coffeeshop.name)
-                            .font(.system(size: 18))
-                            .fontWeight(.bold)
-                            .padding(.vertical, 8)
+            List(cofeeShopResult) { coffeeShop in
+                NavigationLink(destination: CoffeeShopDetailView(coffeeShop: coffeeShop)) {
+                    HStack (spacing: 16) {
+                        Image(coffeeShop.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 120, height: 120)
+                            .cornerRadius(16)
                         
-                        Text(coffeeshop.location)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        
-                        Spacer()
-                        
-                        HStack (alignment: .center) {
-                            Image(systemName: "star.fill")
-                                .font(.caption)
-                                .foregroundColor(.yellow)
+                        VStack (alignment: .leading, spacing: 0) {
+                            Text(coffeeShop.name)
+                                .font(.system(size: 18))
+                                .fontWeight(.bold)
+                                .padding(.vertical, 8)
                             
-                            Text("4.5")
-                                .font(.caption)
+                            Text(coffeeShop.location)
+                                .font(.subheadline)
                                 .foregroundColor(.gray)
+                            
+                            Spacer()
+                            
+                            HStack (alignment: .center) {
+                                Image(systemName: "star.fill")
+                                    .font(.caption)
+                                    .foregroundColor(.yellow)
+                                
+                                Text("4.5")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                            }
+                            .padding(.vertical, 8)
                         }
-                        .padding(.vertical, 8)
+                        .frame(height: 120)
                     }
-                    .frame(height: 120)
                 }
             }
             .listStyle(.plain)
