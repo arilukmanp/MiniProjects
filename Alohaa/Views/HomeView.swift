@@ -13,53 +13,10 @@ struct HomeView: View {
     
     var body: some View {
         ZStack (alignment: .leading) {
-            Image("tropical-beach")
-                .resizable()
-                .overlay {
-                    Color.black
-                        .opacity(0.6)
-                }
-                .ignoresSafeArea()
+            bgImage
             
             VStack (alignment: .leading) {
-                HStack (alignment: .center) {
-                    IconButton(
-                        action: { isShowingAlert = true },
-                        icon: "cloud.sun.fill"
-                    )
-                    .alert("Not Yet Available", isPresented: $isShowingAlert, actions: {}, message: {
-                        Text("Currently on active development")
-                    })
-                    
-                    
-                    Spacer()
-                    
-                    Text("Travel")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    IconButton(
-                        action: { isShowingSheet = true },
-                        icon: "cart.badge.plus"
-                    )
-                    .sheet(isPresented: $isShowingSheet) {
-                        VStack {
-                            Rectangle()
-                                .frame(width: 70, height: 6)
-                                .cornerRadius(10)
-                                .foregroundColor(.gray)
-                                .padding(.vertical, 8)
-                            
-                            Text("Bottom sheet content")
-                            
-                            Spacer()
-                        }
-                        .presentationDetents([.medium])
-                    }
-                }
-                .padding(.bottom, 40)
+                titleBar
                 
                 Text("Start Your\nAdventure\nand Go\nTravel Now")
                     .font(.system(size: 40))
@@ -75,7 +32,6 @@ struct HomeView: View {
                 Spacer()
             }
             .padding(.horizontal, 36)
-                
         }
     }
 }
@@ -86,7 +42,51 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-struct IconButton: View {
+extension HomeView {
+    private var bgImage: some View {
+        Image("tropical-beach")
+            .resizable()
+            .overlay {
+                Color.black
+                    .opacity(0.6)
+            }
+            .ignoresSafeArea()
+    }
+    
+    private var titleBar: some View {
+        HStack (alignment: .center) {
+            IconButton(
+                action: { isShowingAlert = true },
+                icon: "cloud.sun.fill"
+            )
+            .alert("Not Yet Available", isPresented: $isShowingAlert, actions: {}, message: {
+                Text("Currently on active development")
+            })
+            
+            Spacer()
+            
+            Text("Travel")
+                .font(.title2)
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+            IconButton(
+                action: { isShowingSheet = true },
+                icon: "cart.badge.plus"
+            )
+            .sheet(isPresented: $isShowingSheet) {
+                    BottomSheetView()
+                        .padding(.top, 20)
+                .presentationDetents([.medium, .fraction(0.65)])
+            }
+        }
+        .padding(.bottom, 40)
+
+    }
+}
+
+private struct IconButton: View {
     let action: () -> Void
     let icon: String
     
