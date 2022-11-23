@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D166FCD292DDCA6003DABC3 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D166FCC292DDCA6003DABC3 /* BottomSheetView.swift */; };
 		3DE2C194292D20140002F7C5 /* AlohaaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE2C193292D20140002F7C5 /* AlohaaApp.swift */; };
 		3DE2C196292D20140002F7C5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE2C195292D20140002F7C5 /* HomeView.swift */; };
 		3DE2C198292D20160002F7C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE2C197292D20160002F7C5 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D166FCC292DDCA6003DABC3 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		3DE2C190292D20140002F7C5 /* Alohaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alohaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE2C193292D20140002F7C5 /* AlohaaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlohaaApp.swift; sourceTree = "<group>"; };
 		3DE2C195292D20140002F7C5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE2C195292D20140002F7C5 /* HomeView.swift */,
+				3D166FCC292DDCA6003DABC3 /* BottomSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				3DE2C196292D20140002F7C5 /* HomeView.swift in Sources */,
 				3DE2C194292D20140002F7C5 /* AlohaaApp.swift in Sources */,
+				3D166FCD292DDCA6003DABC3 /* BottomSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
