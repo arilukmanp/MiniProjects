@@ -44,7 +44,7 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView {
     private var bgImage: some View {
-        Image("tropical-beach")
+        Image("pink-beach")
             .resizable()
             .overlay {
                 Color.black
