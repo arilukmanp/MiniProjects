@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  GetCoffee
 //
 //  Created by Ari on 20/11/22.
@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var coffeeShopData = CoffeeShopProvider
     @State private var searchInput: String = ""
     
-    private var cofeeShopResult: [CoffeeShop] {
-        let result = CoffeeShopProvider
-        
+    private var coffeeShopResult: [CoffeeShop] {
         if searchInput.isEmpty {
-            return result
+            return coffeeShopData
         } else {
-            return result.filter { item in
+            return coffeeShopData.filter { item in
                 item.name.lowercased().contains(searchInput.lowercased())
             }
         }
@@ -26,7 +25,7 @@ struct HomeView: View {
         if searchInput.isEmpty {
             return []
         } else {
-            return cofeeShopResult
+            return coffeeShopResult
         }
     }
     
@@ -34,7 +33,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(cofeeShopResult.shuffled()) { coffeeShop in
+                ForEach(coffeeShopData) { coffeeShop in
                     ZStack {
                         NavigationLink(destination: CoffeeShopDetailView(coffeeShop: coffeeShop)) {
                             EmptyView()
@@ -43,6 +42,9 @@ struct HomeView: View {
 
                         ContentRow(coffeeShop: coffeeShop)
                     }
+                }
+                .onDelete { indexSet in
+                    coffeeShopData.remove(atOffsets: indexSet)
                 }
                 .listRowSeparator(.hidden)
             }

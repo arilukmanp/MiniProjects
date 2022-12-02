@@ -9,8 +9,8 @@ import Foundation
 
 
 struct CoffeeShop: Identifiable {
-    let id: UUID = UUID()
-    let image: String, name: String, location: String, review: String
+    var id: UUID = UUID()
+    var image: String, name: String, location: String, review: String
     var isFavorite: Bool
 }
 
