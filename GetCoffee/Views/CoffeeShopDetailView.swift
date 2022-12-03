@@ -37,6 +37,7 @@ struct CoffeeShopDetailView: View {
                     .padding(.horizontal)
             }   
         }
+        .navigationTitle(Text("Detail Cafe"))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

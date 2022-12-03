@@ -43,6 +43,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ContentRow: View {
     @State var coffeeShop: CoffeeShop
+    @State private var isAlertShow = false
     
     var body: some View {
         HStack (spacing: 16) {
@@ -82,6 +83,46 @@ struct ContentRow: View {
                 .padding(.vertical, 8)
             }
             .frame(height: 120)
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button {
+                coffeeShop.isFavorite.toggle()
+            } label: {
+                Image(systemName: coffeeShop.isFavorite ? "heart.slash" : "heart")
+            }
+            .tint(.pink)
+            
+            Button {
+                
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+            }
+            .tint(.indigo)
+        }
+        .contextMenu {
+            Button {
+                isAlertShow.toggle()
+            } label: {
+                Text("Save Location")
+                Image(systemName: "pin")
+            }
+            
+            Button {
+                coffeeShop.isFavorite.toggle()
+            } label: {
+                Text(coffeeShop.isFavorite ? "Remove from Favorite" : "Mark as Favorite")
+                Image(systemName: coffeeShop.isFavorite ? "heart.slash" : "heart")
+            }
+
+            Button {
+                
+            } label: {
+                Text("Share")
+                Image(systemName: "square.and.arrow.up")
+            }
+        }
+        .alert(isPresented: $isAlertShow) {
+            Alert(title: Text("Not Yet Available"), message: Text("Currently on active development"))
         }
     }
 }
