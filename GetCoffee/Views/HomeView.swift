@@ -10,29 +10,26 @@ import ActivityView
 
 struct HomeView: View {
     @State var coffeeShopData = CoffeeShopProvider
-
+    
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(coffeeShopData) { coffeeShop in
-                    ZStack {
-                        NavigationLink(destination: CoffeeShopDetailView(coffeeShop: coffeeShop)) {
-                            EmptyView()
-                        }
-                        .opacity(0)
-
-                        ContentRow(coffeeShop: coffeeShop)
+        List {
+            ForEach(coffeeShopData) { coffeeShop in
+                ZStack {
+                    NavigationLink(destination: CoffeeShopDetailView(coffeeShop: coffeeShop)) {
+                        EmptyView()
                     }
+                    .opacity(0)
+                    
+                    ContentRow(coffeeShop: coffeeShop)
                 }
-                .onDelete { indexSet in
-                    coffeeShopData.remove(atOffsets: indexSet)
-                }
-                .listRowSeparator(.hidden)
             }
-            .listStyle(.plain)
-            .navigationTitle("Coffee Shop")
+            .onDelete { indexSet in
+                coffeeShopData.remove(atOffsets: indexSet)
+            }
+            .listRowSeparator(.hidden)
         }
+        .listStyle(.plain)
     }
 }
 
