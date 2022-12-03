@@ -13,6 +13,7 @@
 		3D7CB4622929EE9E009CA911 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB4612929EE9E009CA911 /* Preview Assets.xcassets */; };
 		3D7CB46B2929F358009CA911 /* CofeeShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CB46A2929F358009CA911 /* CofeeShopModel.swift */; };
 		3DCA76EA293B093800AA311E /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA76E9293B093800AA311E /* ActivityView */; };
+		3DCA76EC293B1D4100AA311E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCA76EB293B1D4100AA311E /* LaunchScreen.storyboard */; };
 		3DD5BCF5292A318600E87CE9 /* CoffeeShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		3D7CB45E2929EE9E009CA911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D7CB4612929EE9E009CA911 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D7CB46A2929F358009CA911 /* CofeeShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofeeShopModel.swift; sourceTree = "<group>"; };
+		3DCA76EB293B1D4100AA311E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,10 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				3D7CB45A2929EE9C009CA911 /* GetCoffeeApp.swift */,
-				3D7CB45E2929EE9E009CA911 /* Assets.xcassets */,
 				3D7CB4682929F07C009CA911 /* Models */,
 				3D7CB4692929F08D009CA911 /* Views */,
 				3D7CB4602929EE9E009CA911 /* Preview Content */,
+				3DCA76EB293B1D4100AA311E /* LaunchScreen.storyboard */,
+				3D7CB45E2929EE9E009CA911 /* Assets.xcassets */,
 			);
 			path = GetCoffee;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCA76EC293B1D4100AA311E /* LaunchScreen.storyboard in Resources */,
 				3D7CB4622929EE9E009CA911 /* Preview Assets.xcassets in Resources */,
 				3D7CB45F2929EE9E009CA911 /* Assets.xcassets in Resources */,
 			);
@@ -307,6 +311,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -339,6 +344,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
