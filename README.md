@@ -2,23 +2,15 @@
 # Get Coffee
 
 This mini-project just for exploration and learning purposes of Swift UI in the areas of:
-- Text
-- Image
-- Linear Gradient
-- Stack
-- List
-- Search
-- Search Suggestions
-- Navigation
+- On Delete
+- Swipe Action
+- Context Menu
+- Activity View
+- SPM
+- Launch Screen
+- Tab View
 
 
-## Screenshots
+## Screen Record
 
-|   Home View   |  Detail View  |
-| ------------- | ------------- |
-| <img src=".screenshot/home.png" alt="Home View" width="180"/> | <img src=".screenshot/detail.png" alt="Detail View" width="180"/> |
-
-| Suggestions Search |  Search Result  |
-| ------------------ | --------------- |
-| <img src=".screenshot/suggestions.png" alt="Suggestions Search" width="180"/> | <img src=".screenshot/search.png" alt="Search Result" width="180"/> |
-
+![Get Coffee Screen Record](https://user-images.githubusercontent.com/25118501/205431026-013e309c-4348-40d1-bc7f-342b15998c08.gif)
