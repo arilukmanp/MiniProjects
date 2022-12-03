@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ActivityView
 
 struct HomeView: View {
     @State var coffeeShopData = CoffeeShopProvider
@@ -44,7 +45,9 @@ struct ContentView_Previews: PreviewProvider {
 struct ContentRow: View {
     @State var coffeeShop: CoffeeShop
     @State private var isAlertShow = false
-    
+    @State private var item: ActivityItem?
+
+
     var body: some View {
         HStack (spacing: 16) {
             Image(coffeeShop.image)
@@ -93,7 +96,7 @@ struct ContentRow: View {
             .tint(.pink)
             
             Button {
-                
+                item = shareItem()
             } label: {
                 Image(systemName: "square.and.arrow.up")
             }
@@ -115,14 +118,22 @@ struct ContentRow: View {
             }
 
             Button {
-                
+                item = shareItem()
             } label: {
                 Text("Share")
                 Image(systemName: "square.and.arrow.up")
             }
         }
+        .activitySheet($item)
         .alert(isPresented: $isAlertShow) {
             Alert(title: Text("Not Yet Available"), message: Text("Currently on active development"))
         }
+    }
+    
+    
+    func shareItem() -> ActivityItem {
+        return ActivityItem(
+            items: "I've coffee shop recommendation for you, it is \(coffeeShop.name) in \(coffeeShop.location)"
+        )
     }
 }

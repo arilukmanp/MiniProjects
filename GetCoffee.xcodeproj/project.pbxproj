@@ -12,6 +12,7 @@
 		3D7CB45F2929EE9E009CA911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB45E2929EE9E009CA911 /* Assets.xcassets */; };
 		3D7CB4622929EE9E009CA911 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7CB4612929EE9E009CA911 /* Preview Assets.xcassets */; };
 		3D7CB46B2929F358009CA911 /* CofeeShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CB46A2929F358009CA911 /* CofeeShopModel.swift */; };
+		3DCA76EA293B093800AA311E /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA76E9293B093800AA311E /* ActivityView */; };
 		3DD5BCF5292A318600E87CE9 /* CoffeeShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5BCF4292A318600E87CE9 /* CoffeeShopDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCA76EA293B093800AA311E /* ActivityView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,9 @@
 			dependencies = (
 			);
 			name = GetCoffee;
+			packageProductDependencies = (
+				3DCA76E9293B093800AA311E /* ActivityView */,
+			);
 			productName = GetCoffee;
 			productReference = 3D7CB4572929EE9C009CA911 /* GetCoffee.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 3D7CB44E2929EE9C009CA911;
+			packageReferences = (
+				3DCA76E8293B093800AA311E /* XCRemoteSwiftPackageReference "ActivityView" */,
+			);
 			productRefGroup = 3D7CB4582929EE9C009CA911 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DCA76E8293B093800AA311E /* XCRemoteSwiftPackageReference "ActivityView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DCA76E9293B093800AA311E /* ActivityView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA76E8293B093800AA311E /* XCRemoteSwiftPackageReference "ActivityView" */;
+			productName = ActivityView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D7CB44F2929EE9C009CA911 /* Project object */;
 }
