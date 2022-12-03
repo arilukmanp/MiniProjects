@@ -9,26 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var coffeeShopData = CoffeeShopProvider
-    @State private var searchInput: String = ""
-    
-    private var coffeeShopResult: [CoffeeShop] {
-        if searchInput.isEmpty {
-            return coffeeShopData
-        } else {
-            return coffeeShopData.filter { item in
-                item.name.lowercased().contains(searchInput.lowercased())
-            }
-        }
-    }
-    
-    private var suggestedSearchResult: [CoffeeShop] {
-        if searchInput.isEmpty {
-            return []
-        } else {
-            return coffeeShopResult
-        }
-    }
-    
+
     
     var body: some View {
         NavigationStack {
@@ -50,20 +31,6 @@ struct HomeView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Coffee Shop")
-            .searchable(
-                text: $searchInput,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Search Coffee Shop"
-            ) {
-                if (!searchInput.isEmpty && suggestedSearchResult.isEmpty) {
-                    Text("Oops.. No coffee shops found in the list")
-                } else {
-                    ForEach(suggestedSearchResult) { result in
-                        Text("Looking for \(result.name)")
-                            .searchCompletion(result.name)
-                    }
-                }
-            }
         }
     }
 }
