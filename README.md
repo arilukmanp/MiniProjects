@@ -8,3 +8,5 @@ This mono-repo contains some of mini-project for iOS development exploration and
 
 - [**Exercise 1** - GetCoffee](https://github.com/arilukmanp/MiniProjects/tree/exercise1)
 - [**Exercise 2** - Alohaa](https://github.com/arilukmanp/MiniProjects/tree/exercise2)
+- [**Exercise 2** - Adjustment GetCoffee](https://github.com/arilukmanp/MiniProjects/tree/exercise3)
+- [**Exercise 2** - SwiftUI Animations](https://github.com/arilukmanp/MiniProjects/tree/exercise4)
