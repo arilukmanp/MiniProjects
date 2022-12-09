@@ -19,10 +19,6 @@ struct ContentView: View {
             LoadingProgressView()
             DotLoadingView()
             MorphingAnimationView()
-            
-            // ASSIGNMENT
-            Text("recording...")
-            
         } //: SCROLLVIEW
     }
 }
@@ -150,25 +146,30 @@ struct MorphingAnimationView: View {
     @State private var isPlay: Bool = false
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: isStop ? 30 : 5)
-                .frame(width: isStop ? 60 : 250, height: 60)
-                .foregroundStyle(isStop ? Color.blue.gradient : Color.purple.gradient)
-                .overlay {
-                    Image(systemName: "mic.fill")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .scaleEffect(isPlay ? 0.7 : 1)
-                }
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: isStop ? 30 : 5)
+                    .frame(width: isStop ? 60 : 250, height: 60)
+                    .foregroundStyle(isStop ? Color.blue.gradient : Color.purple.gradient)
+                    .overlay {
+                        Image(systemName: "mic.fill")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .scaleEffect(isPlay ? 0.7 : 1)
+                    }
+                
+                RoundedRectangle(cornerRadius: isStop ? 35 : 10)
+                    .trim(from: 0, to: isStop ? 0.0001 : 1)
+                    .stroke(lineWidth: 5)
+                    .frame(width: isStop ? 70 : 260, height: 70)
+                    .foregroundColor(.purple)
+                
+            } //: ZSTACK
             
-            RoundedRectangle(cornerRadius: isStop ? 35 : 10)
-                .trim(from: 0, to: isStop ? 0.0001 : 1)
-                .stroke(lineWidth: 5)
-                .frame(width: isStop ? 70 : 260, height: 70)
-                .foregroundColor(.purple)
-            
-        } //: ZSTACK
-        .padding()
+            Text("Recording...")
+                .opacity(isPlay ? 1 : 0)
+                .animation(.spring().repeatForever().speed(1.02), value: isPlay)
+        }
         .onTapGesture {
             withAnimation(Animation.spring()) {
                 isStop.toggle()
@@ -178,5 +179,6 @@ struct MorphingAnimationView: View {
                 isPlay.toggle()
             }
         }
+        .padding()
     }
 }
