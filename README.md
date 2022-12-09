@@ -1,7 +1,7 @@
+
 # SwiftUI Animation
 
-Topik yang dibahas:
-
+This mini-project just for exploration and learning purposes of SwiftUI in the areas of:
 - Scale Effect
 - Implicit Animation
 - Explicit Animation
@@ -9,16 +9,12 @@ Topik yang dibahas:
 - Animation Duration
 - Animation Spring, Linear, ease in, etc
 
-## Demo
 
-Insert gif or link to demo
+## Screen Record
 
-![Demo Feature](https://res.cloudinary.com/moyadev/image/upload/v1670341925/Bootcamp/Xcode_06-12-2022_at_22.37_rpsdwm.gif)
+![SwiftUI Animation Screen Record](https://user-images.githubusercontent.com/25118501/206655244-1de4c8d9-2227-4548-9a84-773664e85726.gif)
 
-## Authors
+
+## Credits
 
 - [@hidayatabisena](https://www.github.com/octokatherine)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
