@@ -96,7 +96,7 @@ struct CardView: View {
             }
             .padding()
         }
-        .background(.white)
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(12)
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray, style: StrokeStyle(lineWidth: 0.2)))
         .padding()
